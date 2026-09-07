@@ -1,99 +1,43 @@
-/**
- * ThinkSync Studio - Interactive Scripts
- */
-
 document.addEventListener('DOMContentLoaded', () => {
-    // Navbar scroll effect
     const navbar = document.querySelector('.navbar');
-    let lastScrollY = window.scrollY;
+    const toggle = document.querySelector('.nav-toggle');
+    const menu = document.querySelector('.nav-links');
 
-    window.addEventListener('scroll', () => {
-        const currentScrollY = window.scrollY;
+    const updateNavbar = () => navbar?.classList.toggle('scrolled', window.scrollY > 20);
+    updateNavbar();
+    window.addEventListener('scroll', updateNavbar, { passive: true });
 
-        if (currentScrollY > 50) {
-            navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-        } else {
-            navbar.style.boxShadow = 'none';
-        }
-
-        lastScrollY = currentScrollY;
-    });
-
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                const navbarHeight = navbar.offsetHeight;
-                const targetPosition = target.getBoundingClientRect().top + window.scrollY - navbarHeight;
-
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-
-    // Intersection Observer for fade-in animations
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
+    const closeMenu = () => {
+        menu?.classList.remove('open');
+        document.body.classList.remove('menu-open');
+        toggle?.setAttribute('aria-expanded', 'false');
+        if (toggle) toggle.textContent = 'Menu';
     };
 
-    const fadeInObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                fadeInObserver.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    // Add fade-in class to elements we want to animate
-    const animateElements = document.querySelectorAll(
-        '.focus-item, .product-card, .philosophy-item'
-    );
-
-    animateElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        fadeInObserver.observe(el);
+    toggle?.addEventListener('click', () => {
+        const willOpen = !menu?.classList.contains('open');
+        menu?.classList.toggle('open', willOpen);
+        document.body.classList.toggle('menu-open', willOpen);
+        toggle.setAttribute('aria-expanded', String(willOpen));
+        toggle.textContent = willOpen ? 'Close' : 'Menu';
     });
 
-    // Add visible styles via JS
-    const style = document.createElement('style');
-    style.textContent = `
-        .visible {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-        }
-    `;
-    document.head.appendChild(style);
-
-    // Stagger animation for grid items
-    const staggerObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const parent = entry.target;
-                const children = parent.children;
-
-                Array.from(children).forEach((child, index) => {
-                    setTimeout(() => {
-                        child.classList.add('visible');
-                    }, index * 150);
-                });
-
-                staggerObserver.unobserve(parent);
-            }
-        });
-    }, observerOptions);
-
-    // Observe grid containers
-    document.querySelectorAll('.products-grid, .philosophy-grid, .focus-areas').forEach(grid => {
-        staggerObserver.observe(grid);
+    menu?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+    window.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') closeMenu();
     });
+
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+        const revealTargets = document.querySelectorAll('.section-heading, .braglytics-showcase, .proof-copy, .analytics-card, .roadmap-card, .studio-grid, .services-intro, .service-grid article, .product-section-heading, .product-feature-grid article, .rings-grid, .analysis-copy, .analysis-phone, .product-privacy-grid');
+        revealTargets.forEach((element) => element.classList.add('reveal'));
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+        revealTargets.forEach((element) => observer.observe(element));
+    }
 });

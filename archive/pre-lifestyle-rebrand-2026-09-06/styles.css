@@ -1,0 +1,661 @@
+/* ========================================
+   ThinkSync Studio - Styles
+   Calm & Professional Design
+   ======================================== */
+
+/* CSS Variables */
+:root {
+    --color-primary: #4A6FA5;
+    --color-primary-dark: #3A5A8A;
+    --color-primary-light: #6B8FC5;
+    --color-secondary: #7B9E87;
+    --color-accent: #E8B4B8;
+    --color-background: #FAFBFC;
+    --color-surface: #FFFFFF;
+    --color-text: #2D3748;
+    --color-text-light: #718096;
+    --color-text-lighter: #A0AEC0;
+    --color-border: #E2E8F0;
+
+    --gradient-hero: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-calm: linear-gradient(135deg, #a8c0ff 0%, #3f2b96 100%);
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.12);
+
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-xl: 30px;
+
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--color-text);
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    color: var(--color-text-light);
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-border);
+    z-index: 1000;
+    padding: 16px 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.logo:hover {
+    color: var(--color-primary);
+}
+
+.logo-icon {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+}
+
+.logo-img {
+    height: 36px;
+    width: auto;
+    object-fit: contain;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color var(--transition-fast);
+}
+
+.nav-links a:hover {
+    color: var(--color-primary);
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4ecf7 100%);
+    overflow: hidden;
+    padding-top: 80px;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 800px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    margin-bottom: 24px;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--color-text-light);
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 16px 40px;
+    background: var(--color-primary);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: var(--radius-xl);
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-md);
+}
+
+.cta-button:hover {
+    background: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.hero-gradient {
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(107, 143, 197, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* About Section */
+.about {
+    padding: 120px 0;
+    background: var(--color-surface);
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-text > p {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+.focus-areas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+    margin-top: 48px;
+    text-align: left;
+}
+
+.focus-item {
+    display: flex;
+    gap: 20px;
+    padding: 32px;
+    background: var(--color-background);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-normal);
+}
+
+.focus-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.focus-icon {
+    font-size: 2rem;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.focus-item h3 {
+    color: var(--color-primary);
+}
+
+.focus-item p {
+    font-size: 0.95rem;
+    margin-top: 8px;
+}
+
+/* Products Section */
+.products {
+    padding: 120px 0;
+    background: linear-gradient(180deg, var(--color-background) 0%, #e8eef5 100%);
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 60px;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.product-card {
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    padding: 48px 40px;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+    text-align: center;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.product-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    font-size: 2.5rem;
+}
+
+.innerchime-icon {
+    background: transparent;
+}
+
+.product-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.thinksync60-icon {
+    background: transparent;
+}
+
+.product-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.product-tagline {
+    color: var(--color-primary);
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.product-description {
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+}
+
+.product-features {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 32px;
+}
+
+.product-features li {
+    padding: 8px 0;
+    padding-left: 28px;
+    position: relative;
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+}
+
+.product-features li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--color-secondary);
+    font-weight: 600;
+}
+
+.product-link {
+    display: inline-block;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all var(--transition-fast);
+}
+
+.product-link:hover {
+    color: var(--color-primary-dark);
+    gap: 12px;
+}
+
+/* Philosophy Section */
+.philosophy {
+    padding: 120px 0;
+    background: var(--color-surface);
+}
+
+.philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 48px;
+    margin-top: 60px;
+}
+
+.philosophy-item {
+    text-align: center;
+    padding: 20px;
+}
+
+.philosophy-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--color-border);
+    margin-bottom: 16px;
+    line-height: 1;
+}
+
+.philosophy-item h3 {
+    color: var(--color-primary);
+    margin-bottom: 12px;
+}
+
+.philosophy-item p {
+    font-size: 0.95rem;
+}
+
+/* Contact Section */
+.contact {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4ecf7 100%);
+    text-align: center;
+}
+
+.contact-email {
+    display: inline-block;
+    margin-top: 24px;
+    font-size: 1.25rem;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 16px 32px;
+    border: 2px solid var(--color-primary);
+    border-radius: var(--radius-xl);
+    transition: all var(--transition-normal);
+}
+
+.contact-email:hover {
+    background: var(--color-primary);
+    color: white;
+}
+
+/* Footer */
+.footer {
+    background: var(--color-text);
+    color: white;
+    padding: 60px 0 40px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.footer-brand .logo-icon {
+    color: var(--color-primary-light);
+}
+
+.footer-logo {
+    height: 32px;
+    width: auto;
+    object-fit: contain;
+}
+
+.footer-tagline {
+    color: var(--color-text-lighter);
+    font-size: 0.95rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 32px;
+    margin: 16px 0;
+}
+
+.footer-links a {
+    color: var(--color-text-lighter);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.copyright {
+    color: var(--color-text-lighter);
+    font-size: 0.85rem;
+    margin-top: 24px;
+}
+
+/* Legal Pages (Privacy & Terms) */
+.legal-page {
+    padding: 140px 0 80px;
+    background: var(--color-surface);
+    min-height: calc(100vh - 200px);
+}
+
+.legal-page h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 8px;
+    text-align: left;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.legal-updated {
+    color: var(--color-text-lighter);
+    font-size: 0.9rem;
+    margin-bottom: 48px;
+}
+
+.legal-content {
+    max-width: 800px;
+}
+
+.legal-content section {
+    margin-bottom: 40px;
+}
+
+.legal-content h2 {
+    font-size: 1.4rem;
+    text-align: left;
+    margin-bottom: 16px;
+    color: var(--color-text);
+}
+
+.legal-content h3 {
+    font-size: 1.1rem;
+    margin-top: 24px;
+    margin-bottom: 12px;
+    color: var(--color-text);
+}
+
+.legal-content p {
+    margin-bottom: 16px;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.legal-content ul {
+    margin: 16px 0;
+    padding-left: 24px;
+}
+
+.legal-content li {
+    margin-bottom: 12px;
+    color: var(--color-text-light);
+    line-height: 1.7;
+}
+
+.legal-content a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.legal-content a:hover {
+    color: var(--color-primary-dark);
+    text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        padding: 120px 20px 80px;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .about, .products, .philosophy {
+        padding: 80px 0;
+    }
+
+    .focus-areas {
+        grid-template-columns: 1fr;
+    }
+
+    .focus-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+    }
+
+    .product-card {
+        padding: 40px 32px;
+    }
+
+    .philosophy-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .cta-button {
+        padding: 14px 32px;
+        font-size: 0.95rem;
+    }
+
+    .product-features {
+        text-align: left;
+    }
+}
