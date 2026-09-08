@@ -30,7 +30,8 @@
             </a>
             <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
             <div class="nav-links" id="nav-links">
-                <a href="#braglytics">Braglytics</a><a href="#ateyet">AteYet?</a><a href="#studio">Studio</a><a href="#services">Custom development</a>
+                <details class="nav-dropdown"><summary>Apps</summary><div class="nav-dropdown-menu"><a href="braglytics/"><strong>Braglytics</strong><span>Game-night scores &amp; analytics</span></a><a href="ateyet/"><strong>AteYet?</strong><span>Dinner, made simple</span></a></div></details>
+                <a href="#studio">Studio</a><a href="#services">Custom development</a>
                 <a class="nav-cta" href="mailto:support@thinksyncstudio.com">Say hello</a>
             </div>
         </div>
@@ -45,15 +46,15 @@
                     <h1>Useful apps.<br><em>Thoughtfully made.</em></h1>
                     <p class="hero-lede">We create approachable apps for play, home, and everyday life. Meet Braglytics for game night and AteYet? for getting dinner on the table.</p>
                     <div class="hero-actions">
-                        <a class="button button-primary" href="#braglytics">Explore our apps <span aria-hidden="true">↘</span></a>
+                        <a class="button button-primary" href="#apps">Explore our apps <span aria-hidden="true">↘</span></a>
                         <a class="text-link" href="#studio">Meet the studio <span aria-hidden="true">→</span></a>
                     </div>
                 </div>
                 <div class="hero-stage" aria-label="ThinkSync Studio app collection">
                     <div class="stage-card stage-main">
-                        <div class="app-chip"><img src="assets/braglytics/icon.png" alt=""><div><strong>Braglytics</strong><span>Available first</span></div></div>
-                        <p>Settle bragging rights<br>with data.</p>
-                        <div class="mini-chart" aria-hidden="true"><span style="--h:52%;--c:#f45d3a"></span><span style="--h:76%;--c:#2778d8"></span><span style="--h:38%;--c:#efb51d"></span><span style="--h:64%;--c:#0ca66a"></span><span style="--h:88%;--c:#f45d3a"></span></div>
+                        <div class="app-chip-stack"><div class="app-chip"><img src="assets/braglytics/icon.png" alt=""><div><strong>Braglytics</strong><span>Game-night analytics</span></div></div><div class="app-chip"><img src="assets/ateyet/icon-512.png" alt=""><div><strong>AteYet?</strong><span>Dinner, made simple</span></div></div></div>
+                        <p>Useful apps for<br>everyday moments.</p>
+                        <div class="stage-app-dots" aria-hidden="true"><i></i><i></i><i></i></div>
                     </div>
                     <div class="stage-note note-one"><span>01</span> Play</div><div class="stage-note note-two"><span>02</span> Dinner</div><div class="stage-spark" aria-hidden="true">✦</div>
                 </div>
@@ -62,59 +63,20 @@
 
         <div class="ticker" aria-label="App categories"><div><span>PLAY</span><i>✦</i><span>RESET</span><i>✦</i><span>CONNECT</span><i>✦</i><span>COOK</span><i>✦</i><span>REPEAT</span></div></div>
 
-        <section class="feature" id="braglytics">
+        <section class="apps" id="apps">
             <div class="container">
-                <div class="section-heading feature-heading">
-                    <div><p class="eyebrow"><span></span> App no. 01</p><h2>Game night<br>keeps receipts.</h2></div>
-                    <p>Braglytics is a private iPhone scorekeeper with serious analysis for competitive card-game groups. Score fast at the table, then find out who really wins.</p>
+                <div class="section-heading apps-heading"><div><p class="eyebrow"><span></span> Our apps</p><h2>Made for life<br>as it happens.</h2></div><p>Each ThinkSync Studio app has a clear purpose and a home of its own. Explore the current collection below.</p></div>
+                <div class="app-directory">
+                    <article class="app-directory-card app-card-braglytics">
+                        <div class="app-directory-top"><span>01</span><img src="assets/braglytics/icon.png" alt="Braglytics app icon"></div>
+                        <div><p class="app-directory-kicker">Play</p><h3>Braglytics</h3><p>Track card-game scores, settle long-running rivalries, and discover who really wins with private, detailed analytics.</p><div class="app-directory-tags"><span>iPhone</span><span>Private</span><span>Game-night analytics</span></div><a class="button button-paper" href="braglytics/">Visit Braglytics <span aria-hidden="true">→</span></a></div>
+                    </article>
+                    <article class="app-directory-card app-card-ateyet">
+                        <div class="app-directory-top"><span>02</span><img src="assets/ateyet/icon-512.png" alt="AteYet? app icon"></div>
+                        <div><p class="app-directory-kicker">Dinner</p><h3>AteYet?</h3><p>Turn ingredients you already have into practical dinner ideas, a flexible weekly plan, and a shorter grocery list.</p><div class="app-directory-tags"><span>iPhone &amp; iPad</span><span>Offline</span><span>261 recipes</span></div><a class="button button-paper" href="ateyet/">Visit AteYet? <span aria-hidden="true">→</span></a></div>
+                    </article>
                 </div>
-                <div class="braglytics-showcase">
-                    <div class="phone-frame"><img src="assets/braglytics/hero.png" alt="Braglytics home screen showing a four-player rivalry table"></div>
-                    <div class="feature-panel">
-                        <div class="product-lockup"><img src="assets/braglytics/icon.png" alt="Braglytics app icon"><div><p class="platform">Built for iPhone</p><h3>Braglytics</h3></div></div>
-                        <p class="feature-intro">Keep every score, every comeback, and every “I always win” claim in one honest record.</p>
-                        <ul class="feature-list">
-                            <li><span>01</span><div><strong>Score the whole table</strong><p>Fast round entry for two to four players, with rules that fit your group.</p></div></li>
-                            <li><span>02</span><div><strong>Know the real record</strong><p>Win rates, go-out rates, trends, head-to-head results, and more.</p></div></li>
-                            <li><span>03</span><div><strong>Keep it private</strong><p>No account, ads, tracking, or server. Your history stays on your phone.</p></div></li>
-                        </ul>
-                        <a class="button button-dark" href="braglytics/">Explore Braglytics <span aria-hidden="true">→</span></a>
-                        <div class="product-legal-links"><a href="braglytics/privacy.html">Privacy policy</a><a href="braglytics/terms.html">Terms of use</a></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="proof">
-            <div class="container proof-grid">
-                <div class="proof-copy"><p class="eyebrow eyebrow-light"><span></span> Beyond the scoreboard</p><h2>Patterns hide in plain sight.</h2><p>Braglytics turns completed games into clear, careful statistics—without pretending a small sample is the final word.</p><div class="proof-tags" aria-label="Braglytics analysis features"><span>Player Rings</span><span>Head-to-head</span><span>Recent form</span><span>Spreadsheet export</span></div></div>
-                <div class="analytics-card"><img src="assets/braglytics/analytics.png" alt="Braglytics analytics screen comparing player win rates and go-out rates" loading="lazy"></div>
-            </div>
-        </section>
-
-        <section class="feature ateyet-feature" id="ateyet">
-            <div class="container">
-                <div class="section-heading feature-heading">
-                    <div><p class="eyebrow"><span></span> App no. 02</p><h2>Dinner starts<br>with what you have.</h2></div>
-                    <p>AteYet? turns the ingredients already in your kitchen into simple dinner ideas, a flexible weekly plan, and a shorter grocery list.</p>
-                </div>
-                <div class="ateyet-showcase">
-                    <div class="ateyet-visual" aria-label="AteYet recipe and ingredient artwork">
-                        <img class="ateyet-logo-image" src="assets/ateyet/brand-logo.png" alt="AteYet? — Dinner, made simple.">
-                        <img class="ateyet-dish-image" src="assets/ateyet/dishes-a.jpg" alt="A collection of dishes represented in AteYet?" loading="lazy">
-                    </div>
-                    <div class="feature-panel ateyet-panel">
-                        <div class="product-lockup"><img src="assets/ateyet/icon-512.png" alt="AteYet? app icon"><div><p class="platform">Built for iPhone and iPad</p><h3>AteYet?</h3></div></div>
-                        <p class="feature-intro">Answer the question “what can I cook tonight?” without another search, login, or subscription.</p>
-                        <ul class="feature-list">
-                            <li><span>01</span><div><strong>Cook with what you have</strong><p>Choose ingredients from your kitchen and get three practical matches, easiest first.</p></div></li>
-                            <li><span>02</span><div><strong>Plan the week</strong><p>Build three to seven dinners and see exactly what is missing from your grocery list.</p></div></li>
-                            <li><span>03</span><div><strong>Keep it private and offline</strong><p>No account, tracking, cloud service, or live AI. Everything stays on your device.</p></div></li>
-                        </ul>
-                        <a class="button button-paper" href="ateyet/">Explore AteYet? <span aria-hidden="true">→</span></a>
-                        <div class="product-legal-links"><a href="ateyet/privacy/">Privacy policy</a><a href="ateyet/terms/">Terms of use</a></div>
-                    </div>
-                </div>
+                <p class="app-directory-note">More useful apps will be added here when they are ready.</p>
             </div>
         </section>
 
@@ -143,7 +105,7 @@
     </main>
 
     <footer class="footer">
-        <div class="container footer-grid"><div><a class="wordmark wordmark-footer" href="#top"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>ThinkSync <strong>Studio</strong></span></a><p>Independent makers of useful apps and custom digital products.</p></div><div class="footer-links"><a href="braglytics/">Braglytics</a><a href="ateyet/">AteYet?</a><a href="#studio">Studio</a><a href="#services">Custom development</a><a href="privacy.html">Studio privacy</a><a href="terms.html">Studio terms</a></div></div>
+        <div class="container footer-grid"><div><a class="wordmark wordmark-footer" href="#top"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>ThinkSync <strong>Studio</strong></span></a><p>Independent makers of useful apps and custom digital products.</p></div><div class="footer-links"><a href="#apps">All apps</a><a href="#studio">Studio</a><a href="#services">Custom development</a><a href="privacy.html">Studio privacy</a><a href="terms.html">Studio terms</a></div></div>
         <div class="container footer-bottom"><p>© 2026 ThinkSync Studio. All rights reserved.</p><p>ThinkSync Studio is an independent app studio.</p></div>
     </footer>
     <script src="script.js"></script>
