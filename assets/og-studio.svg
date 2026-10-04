@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f7f3eb"/>
+  <circle cx="1130" cy="60" r="210" fill="none" stroke="#e8dfd0" stroke-width="42"/>
+  <g font-family="Helvetica Neue,Arial,sans-serif" fill="#10182b">
+    <text x="66" y="72" font-size="27" font-weight="700">ThinkSync Studio</text>
+    <text x="66" y="183" font-size="76" font-weight="700" letter-spacing="-3">Useful apps.</text>
+    <text x="66" y="266" font-size="76" font-weight="700" letter-spacing="-3" fill="#da4425">Thoughtfully made.</text>
+    <text x="69" y="319" font-size="23" fill="#5f6470">An independent app studio. Six apps, coming soon.</text>
+    <g font-size="25" font-weight="700" fill="#fffdfa">
+      <rect x="66" y="365" width="340" height="70" rx="18" fill="#10182b"/><text x="91" y="410">Braglytics</text>
+      <rect x="430" y="365" width="340" height="70" rx="18" fill="#1f6844"/><text x="455" y="410">AteYet?</text>
+      <rect x="794" y="365" width="340" height="70" rx="18" fill="#15575a"/><text x="819" y="410">Back to Better</text>
+      <rect x="66" y="453" width="340" height="70" rx="18" fill="#344d40"/><text x="91" y="498">YUAN</text>
+      <rect x="430" y="453" width="340" height="70" rx="18" fill="#223955"/><text x="455" y="498">Gossamer</text>
+      <rect x="794" y="453" width="340" height="70" rx="18" fill="#142338"/><text x="819" y="498">AutoJustice</text>
+    </g>
+    <text x="69" y="580" font-size="21" fill="#5f6470">thinksyncstudio.com</text>
+    <text x="1134" y="580" text-anchor="end" font-size="21" fill="#5f6470">Apps + custom development</text>
+  </g>
+</svg>
